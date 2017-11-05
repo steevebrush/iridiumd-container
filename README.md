@@ -18,24 +18,24 @@ More information abour Iridium cryptonote money [here][3]
   	LOG_FILE /data/iridium.log
   	LOG_LEVEL 1
 	
-	ex : docker run -e "TIMEZONE"="Europe/Paris" -e "P2P_BIND_IP"="1.2.3.4 -e "P2P_BIND_PORT"="12007" -e "P2P_EXTERNAL_PORT"="12007" -e "RPC_BIND_IP"="5.6.7.8 -e "RPC_BIND_PORT"="13007" -e "LOG_LEVEL"="4" -e "LOG_FILE"="/data/iridium.log" steevebrush/iridiumd
+	ex : docker run -it -e "TIMEZONE"="Europe/Paris" -e "P2P_BIND_IP"="1.2.3.4 -e "P2P_BIND_PORT"="12007" -e "P2P_EXTERNAL_PORT"="12007" -e "RPC_BIND_IP"="5.6.7.8 -e "RPC_BIND_PORT"="13007" -e "LOG_LEVEL"="4" -e "LOG_FILE"="/data/iridium.log" steevebrush/iridiumd
 	
 ### Volumes : 
 
 	/data : database, log files will be stored here.
   	tip : bind a directory, so you won't lose the (big) database at each restart
-	ex : docker run -v /my_IRD_data:/data steevebrush/alpine-domoticz
+	ex : docker run -it -v /my_IRD_data:/data steevebrush/alpine-domoticz
 
 ### Default Ports :
 
 	12007 : p2p port, to be connected with the real world !
 	13007 : rpc port, to query the daemon !
-	ex : docker run -p my_local_p2p_port:12007 --p my_local_rpc_port:13007 steevebrush/iridiumd
+	ex : docker run -it -p my_local_p2p_port:12007 --p my_local_rpc_port:13007 steevebrush/iridiumd
 
 ### Quick start :
 	
 	docker run -it steevebrush/iridiumd (config directory will be erased at each start)
-	docker run -v /my_config_dir:/config steevebrush/iridiumd (config directory will be saved)
+	docker run -it -v /my_config_dir:/config steevebrush/iridiumd (config directory will be saved)
 
 ### Fine tune :
 
@@ -45,7 +45,7 @@ If you map the /data volume, your config, database, log and everything else will
 
 Everything is setup : ports, timezone, data, log
 
-	docker run -e "TIMEZONE"="Europe/Paris" -p my_local_p2p_port:12007 --p my_local_rpc_port:13007 -e "P2P_BIND_IP"="1.2.3.4 -e "P2P_BIND_PORT"="my_local_p2p_port" -e "P2P_EXTERNAL_PORT"="12007" -e "RPC_BIND_IP"="5.6.7.8 -e "RPC_BIND_PORT"="my_local_rpc_port" -e "LOG_LEVEL"="4" -e "LOG_FILE"="/data/iridium.log" steevebrush/iridiumd
+	docker run -it -e "TIMEZONE"="Europe/Paris" -p my_local_p2p_port:12007 --p my_local_rpc_port:13007 -e "P2P_BIND_IP"="1.2.3.4 -e "P2P_BIND_PORT"="my_local_p2p_port" -e "P2P_EXTERNAL_PORT"="12007" -e "RPC_BIND_IP"="5.6.7.8 -e "RPC_BIND_PORT"="my_local_rpc_port" -e "LOG_LEVEL"="4" -e "LOG_FILE"="/data/iridium.log" steevebrush/iridiumd
 
 
 ### Finally, you are running an IRD node !
