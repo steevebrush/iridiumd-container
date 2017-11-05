@@ -1,5 +1,5 @@
 # iridiumd-container
-Iridium (IRD) full node container for docker
+[Iridium (IRD)][2] full node container for docker
 
 This container allow you to run a full Iridium node -
 You can refer to the automatic build at [docker hub][1] too.
