@@ -2,28 +2,29 @@
 Iridium (IRD) full node container for docker
 
 This container allow you to run a full Iridium node -
-You can refer to the automatic build at [docker hub][4] too.
+You can refer to the automatic build at [docker hub][1] too.
 
-More information abour Iridium cryptonote [money here][1]
+Iridium official [website][2]
+More information abour Iridium cryptonote money [here][3]
 
-### Environment variables :		
- 			
- 	TIMEZONE : set your timezone to be right on time.
-  	p2p-bind-ip 0.0.0.0
-  	p2p-bind-port 12007
-  	p2p-external-port 12007
-  	rpc-bind-ip 127.0.0.1
-  	rpc-bind-port=13007
-  	log-file=/data/iridium.log
-  	no-console=yes
-  	log-level=1
+### Environment variables with defaults values :
 	
-	ex : docker run -e "TIMEZONE"="Europe/Paris" -e "p2p-bind-ip"="1.2.3.4 -e "p2p-bind-port"="12007" -e "p2p-external-port"="12007" -e "rpc-bind-ip"="5.6.7.8 -e "rpc-bind-port"="13007" -e "log-level"="4"   steevebrush/iridiumd
+ 	TIMEZONE Europe/Paris
+  	P2P_BIND_IP 0.0.0.0
+  	P2P_BIND_PORT 12007
+  	P2P_EXTERNAL_PORT 12007
+  	RPC_BIND_IP 127.0.0.1
+  	RPC_BIND_PORT 13007
+  	LOG_FILE /data/iridium.log
+  	NO_CONSOLE yes
+  	LOG_LEVEL 1
+	
+	ex : docker run -e "TIMEZONE"="Europe/Paris" -e "P2P_BIND_IP"="1.2.3.4 -e "P2P_BIND_PORT"="12007" -e "P2P_EXTERNAL_PORT"="12007" -e "RPC_BIND_IP"="5.6.7.8 -e "RPC_BIND_PORT"="13007" -e "LOG_LEVEL"="4" -e "LOG_FILE"="/data/iridium.log" steevebrush/iridiumd
 	
 ### Volumes : 
 
 	/data : database, log files will be stored here.
-  	tip : bind a dirctory, so you won't lose the database at each restart
+  	tip : bind a directory, so you won't lose the (big) database at each restart
 	ex : docker run -v /my_IRD_data:/data steevebrush/alpine-domoticz
 
 ### Default Ports :
@@ -43,11 +44,12 @@ If you map the /data volume, your config, database, log and everything else will
 
 ### Example with all set :
 
-Everything is setup : incoming port, timezone, data directory and usb device
+Everything is setup : ports, timezone, data, log
 
-	docker run -e "TIMEZONE"="Europe/Paris" -e "p2p-bind-ip"="1.2.3.4 -e "p2p-bind-port"="12007" -e "p2p-external-port"="12007" -e "rpc-bind-ip"="5.6.7.8 -e "rpc-bind-port"="13007" -e "log-level"="4"   steevebrush/iridiumd
+	docker run -e "TIMEZONE"="Europe/Paris" -e "P2P_BIND_IP"="1.2.3.4 -e "P2P_BIND_PORT"="12007" -e "P2P_EXTERNAL_PORT"="12007" -e "RPC_BIND_IP"="5.6.7.8 -e "RPC_BIND_PORT"="13007" -e "LOG_LEVEL"="4" -e "LOG_FILE"="/data/iridium.log" -e "NO_CONSOLE"="yes" steevebrush/iridiumd
 
 
 ### Finally, you are running an IRD node !
-
 [1]: https://bitcointalk.org/index.php?topic=2150442.0
+[2]: http://ird.cash
+[3]: https://bitcointalk.org/index.php?topic=2150442.0
