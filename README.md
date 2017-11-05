@@ -49,6 +49,6 @@ Everything is setup : ports, timezone, data, log
 
 
 ### Finally, you are running an IRD node !
-[1]: https://bitcointalk.org/index.php?topic=2150442.0
+[1]: https://hub.docker.com/r/steevebrush/iridiumd-container
 [2]: http://ird.cash
 [3]: https://bitcointalk.org/index.php?topic=2150442.0
