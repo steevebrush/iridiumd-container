@@ -45,7 +45,7 @@ If you map the /data volume, your config, database, log and everything else will
 
 Everything is setup : ports, timezone, data, log
 
-	docker run -e "TIMEZONE"="Europe/Paris" -e "P2P_BIND_IP"="1.2.3.4 -e "P2P_BIND_PORT"="12007" -e "P2P_EXTERNAL_PORT"="12007" -e "RPC_BIND_IP"="5.6.7.8 -e "RPC_BIND_PORT"="13007" -e "LOG_LEVEL"="4" -e "LOG_FILE"="/data/iridium.log" steevebrush/iridiumd
+	docker run -e "TIMEZONE"="Europe/Paris" -p my_local_p2p_port:12007 --p my_local_rpc_port:13007 -e "P2P_BIND_IP"="1.2.3.4 -e "P2P_BIND_PORT"="my_local_p2p_port" -e "P2P_EXTERNAL_PORT"="12007" -e "RPC_BIND_IP"="5.6.7.8 -e "RPC_BIND_PORT"="my_local_rpc_port" -e "LOG_LEVEL"="4" -e "LOG_FILE"="/data/iridium.log" steevebrush/iridiumd
 
 
 ### Finally, you are running an IRD node !
