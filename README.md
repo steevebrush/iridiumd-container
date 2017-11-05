@@ -16,7 +16,6 @@ More information abour Iridium cryptonote money [here][3]
   	RPC_BIND_IP 127.0.0.1
   	RPC_BIND_PORT 13007
   	LOG_FILE /data/iridium.log
-  	NO_CONSOLE yes
   	LOG_LEVEL 1
 	
 	ex : docker run -e "TIMEZONE"="Europe/Paris" -e "P2P_BIND_IP"="1.2.3.4 -e "P2P_BIND_PORT"="12007" -e "P2P_EXTERNAL_PORT"="12007" -e "RPC_BIND_IP"="5.6.7.8 -e "RPC_BIND_PORT"="13007" -e "LOG_LEVEL"="4" -e "LOG_FILE"="/data/iridium.log" steevebrush/iridiumd
@@ -46,7 +45,7 @@ If you map the /data volume, your config, database, log and everything else will
 
 Everything is setup : ports, timezone, data, log
 
-	docker run -e "TIMEZONE"="Europe/Paris" -e "P2P_BIND_IP"="1.2.3.4 -e "P2P_BIND_PORT"="12007" -e "P2P_EXTERNAL_PORT"="12007" -e "RPC_BIND_IP"="5.6.7.8 -e "RPC_BIND_PORT"="13007" -e "LOG_LEVEL"="4" -e "LOG_FILE"="/data/iridium.log" -e "NO_CONSOLE"="yes" steevebrush/iridiumd
+	docker run -e "TIMEZONE"="Europe/Paris" -e "P2P_BIND_IP"="1.2.3.4 -e "P2P_BIND_PORT"="12007" -e "P2P_EXTERNAL_PORT"="12007" -e "RPC_BIND_IP"="5.6.7.8 -e "RPC_BIND_PORT"="13007" -e "LOG_LEVEL"="4" -e "LOG_FILE"="/data/iridium.log" steevebrush/iridiumd
 
 
 ### Finally, you are running an IRD node !
